@@ -51,8 +51,12 @@ public class person {
         this.mps = mps;
     }
 
+    public String getName() {
+        return name;
+    }
+
     //遭到攻擊時的處理函式
-    public void kick(int attack, int mps) {
+    public void kick(int attack,String name1) {
         int hurt = 0;             //受到的傷害
         int residue_hp;          //剩餘生命值
 
@@ -62,7 +66,7 @@ public class person {
             if(hurt > 0) {
                 residue_hp = hp - attack;//每回合計算剩餘生命值
                 System.out.println(this.name + "使出" + this.Skill);
-                System.out.println(this.name + "受到" + attack + "點傷害！");//受到多少傷害
+                System.out.println(name1 + "受到" + attack + "點傷害！");//受到多少傷害
                 if (residue_hp < 0) {
                     residue_hp = 0;
                 }

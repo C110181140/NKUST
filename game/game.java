@@ -56,10 +56,10 @@ public class game {
                     number++;                               //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
                     if(Archer.getHr()==1) {    //弓箭手打中狂戰士
-                        Berserker.kick(Archer.getAttack(),Archer.getMps());
+                        Berserker.kick(Archer.getAttack(),Archer.getName());
                     }
                     if(Berserker.getHr()==1 && Berserker.getHp() > 0 ){//狂戰士當前生命值大於0（即活著），並且打中弓箭手
-                        Archer.kick(Berserker.getAttack(),Berserker.getMps());
+                        Archer.kick(Berserker.getAttack(),Berserker.getName());
                     }
                     Thread.sleep(1000);
                     System.out.println("==============================");
@@ -86,10 +86,10 @@ public class game {
                     number++;                              //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
                     if(Archer.getHr()==1 ){     //弓箭手打中魔法師
-                        Magician.kick(Archer.getAttack(),Archer.getMps());
+                        Magician.kick(Archer.getAttack(),Archer.getName());
                     }
                     if(Magician.getHr()==1 && Magician.getHp() > 0) {//魔法師活著，打中弓箭手
-                        Archer.kick(Magician.getAttack(),Magician.getMps());
+                        Archer.kick(Magician.getAttack(),Magician.getName());
                     }
                     Thread.sleep(1000);
                     System.out.println("==============================");
@@ -101,7 +101,7 @@ public class game {
             }
 
             //狂戰士對魔法師
-            case "BC":{
+            case "BC" :{
                 System.out.println("");
                 System.out.println("狂戰士 vs 魔法師");
                 if (ARM.equals("A")){                                       //判斷是否裝備武器
@@ -116,10 +116,10 @@ public class game {
                     number++;                               //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
                     if(Berserker.getHr()==1) {     //狂戰士打中魔法師
-                        Magician.kick(Berserker.getAttack(),Berserker.getMps());  //魔法師防禦
+                        Magician.kick(Berserker.getAttack(),Berserker.getName());  //魔法師防禦
                     }
                     if(Magician.getHr()==1 && Magician.getHp() > 0) {//魔法師活著，打中狂戰士
-                        Berserker.kick(Magician.getAttack(), Magician.getMps());
+                        Berserker.kick(Magician.getAttack(),Magician.getName());
                     }
                     Thread.sleep(1000);
                     System.out.println("==============================");
