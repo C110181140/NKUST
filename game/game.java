@@ -9,8 +9,9 @@ public class game {
         Magician Magician = new Magician();       //建立一個魔法師物件
         Scanner input = new Scanner(System.in);//建立一個Scanner物件input
 
-        String role = "";    //宣告變數cole,用於獲取從控制檯輸入角色
+        String role = "";    //宣告變數role,用於獲取從控制檯輸入角色
         String opponent = "";//宣告變數opponent,用於獲取從控制檯選擇的對手
+        String ARM = "";
         String battle = "";    //宣告變數battle,用於選擇對戰過程
         int number = 0;      //用於記錄回合數
 
@@ -25,6 +26,10 @@ public class game {
         System.out.println("B:狂戰士");
         System.out.println("C:魔法師" + "\n");
         opponent = input.nextLine();//獲取玩家選擇的對手
+        System.out.println("請選擇是否裝備武器：" + "\n");
+        System.out.println("A:是");
+        System.out.println("B:否" + "\n");
+        ARM = input.nextLine();//獲取玩家選擇的對手
 
         //角色和對手不能相同
         if (role.equals(opponent)) {//字串之間的比較
@@ -39,6 +44,14 @@ public class game {
             case "AB":{
                 System.out.println("");
                 System.out.println("弓箭手 vs 狂戰士");
+                if (ARM.equals("A")){                                       //判斷是否裝備武器
+                    System.out.println(Archer.name + "裝備" + Archer.arm + "攻擊力提升10點");
+                    Archer.attack = Archer.attack + 10;
+                    System.out.println(Berserker.name + "裝備" + Berserker.arm + "攻擊力提升10點");
+                    Berserker.attack = Berserker.attack + 10;
+                }else {
+                    System.out.println("沒有裝備武器");
+                }
                 while(Berserker.die() && Archer.die()) {     //雙方都活著，迴圈繼續
                     number++;                               //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
@@ -61,6 +74,14 @@ public class game {
             case "AC":{
                 System.out.println("");
                 System.out.println("弓箭手 vs 魔法師");
+                if (ARM.equals("A")){                                       //判斷是否裝備武器
+                    System.out.println(Archer.name + "裝備" + Archer.arm + "攻擊力提升10點");
+                    Archer.attack = Archer.attack + 10;
+                    System.out.println(Magician.name + "裝備" + Magician.arm + "攻擊力提升10點");
+                    Magician.attack = Magician.attack + 10;
+                }else {
+                    System.out.println("沒有裝備武器");
+                }
                 while(Magician.die() && Archer.die()) {     //雙方活著，迴圈繼續
                     number++;                              //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
@@ -72,7 +93,7 @@ public class game {
                     }
                     Thread.sleep(1000);
                     System.out.println("==============================");
-                    if (number>=9){
+                    if (number>=100){
                         break;
                     }
                 }
@@ -83,13 +104,21 @@ public class game {
             case "BC":{
                 System.out.println("");
                 System.out.println("狂戰士 vs 魔法師");
+                if (ARM.equals("A")){                                       //判斷是否裝備武器
+                    System.out.println(Magician.name + "裝備" + Magician.arm + "攻擊力提升10點");
+                    Magician.attack = Magician.attack + 10;
+                    System.out.println(Berserker.name + "裝備" + Berserker.arm + "攻擊力提升10點");
+                    Berserker.attack = Berserker.attack + 10;
+                }else {
+                    System.out.println("沒有裝備武器");
+                }
                 while(Magician.die() && Berserker.die()) {     //雙方或者，迴圈繼續
                     number++;                               //迴圈一次自增1，表示回合數
                     System.out.println("第"+number+"回合：");//每回合輸出回合數
-                    if(Berserker.getHr()==1) {     //騎兵打中法師
-                        Magician.kick(Berserker.getAttack(),Berserker.getMps());  //法師防禦
+                    if(Berserker.getHr()==1) {     //狂戰士打中魔法師
+                        Magician.kick(Berserker.getAttack(),Berserker.getMps());  //魔法師防禦
                     }
-                    if(Magician.getHr()==1 && Magician.getHp() > 0) {//法師活著，打中騎兵
+                    if(Magician.getHr()==1 && Magician.getHp() > 0) {//魔法師活著，打中狂戰士
                         Berserker.kick(Magician.getAttack(), Magician.getMps());
                     }
                     Thread.sleep(1000);

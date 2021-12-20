@@ -79,7 +79,6 @@ public class person {
         }
     }
 
-
     //陣亡時的處理函式，返回一個布林值，代表是否死亡
     public boolean die() {
         boolean flag = true;                     //初始化，代表活著
