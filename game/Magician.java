@@ -7,7 +7,7 @@ public class Magician extends person {
         name = "魔法師";
         Skill = "火山";
         arm ="世界樹之杖";
-        hp = 10;
+        hp = 100;
         attack = 40;
         mp = 30;
         hr = 1;

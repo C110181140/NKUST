@@ -9,7 +9,7 @@ public class Archer extends person {
         name = "弓箭手";
         Skill = "銳眼目瞳";
         arm ="妖精弓";
-        hp = 15;
+        hp = 105;
         attack = 30;
         mp = 10;
         hr = 1;

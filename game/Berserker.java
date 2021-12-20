@@ -7,7 +7,7 @@ public class Berserker extends person {
         name = "狂戰士";
         Skill = "戰術的終結";
         arm ="戰雙斧";
-        hp = 20;
+        hp = 200;
         attack = 15;
         mp = 5;
         hr = 1;
