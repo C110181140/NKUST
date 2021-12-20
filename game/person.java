@@ -1,3 +1,5 @@
+package game;
+
 public class person {
 
     String name;            //名稱

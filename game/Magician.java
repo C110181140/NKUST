@@ -1,7 +1,9 @@
+package game;
+
 public class Magician extends person {
 
     public  Magician(){
-        //初始化5個變數
+        //初始化變數
         name = "魔法師";
         Skill = "火山";
         arm ="世界樹之杖";

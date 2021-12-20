@@ -1,3 +1,5 @@
+package game;
+
 import java.util.Scanner;//匯入java.util包下的Scanner類，以讀取來自System.in的輸入
 public class game {
     public static void main(String[] args) {
