@@ -65,8 +65,8 @@ public class person {
             hurt = hp - attack;
             if(hurt > 0) {
                 residue_hp = hp - attack;//每回合計算剩餘生命值
-                System.out.println(this.name + "使出" + this.Skill);
-                System.out.println(name1 + "受到" + attack + "點傷害！");//受到多少傷害
+                System.out.println(name1 + "使出" + this.Skill);
+                System.out.println(this.name + "受到" + attack + "點傷害！");//受到多少傷害
                 if (residue_hp < 0) {
                     residue_hp = 0;
                 }
@@ -74,7 +74,7 @@ public class person {
                 hp = residue_hp;//當前生命值
             }else{
                 hp = 0;
-                System.out.println(this.name + "使出" + this.Skill);
+                System.out.println(name1 + "使出" + this.Skill);
                 System.out.println("對手受到大於生命的傷害！");
 
             }
