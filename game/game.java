@@ -2,7 +2,7 @@ package game;
 
 import java.util.Scanner;//匯入java.util包下的Scanner類，以讀取來自System.in的輸入
 public class game {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Archer Archer = new Archer();    //建立一個弓箭手物件
         Berserker Berserker = new Berserker();    //建立一個狂戰士物件
@@ -48,6 +48,11 @@ public class game {
                     if(Berserker.getHr()==1 && Berserker.getHp() > 0 ){//狂戰士當前生命值大於0（即活著），並且打中弓箭手
                         Archer.kick(Berserker.getAttack(),Berserker.getMps());
                     }
+                    Thread.sleep(1000);
+                    System.out.println("==============================");
+                    if (number>=9){
+                        break;
+                    }
                 }
                 break;
             }
@@ -65,9 +70,13 @@ public class game {
                     if(Magician.getHr()==1 && Magician.getHp() > 0) {//魔法師活著，打中弓箭手
                         Archer.kick(Magician.getAttack(),Magician.getMps());
                     }
-
+                    Thread.sleep(1000);
+                    System.out.println("==============================");
+                    if (number>=9){
+                        break;
+                    }
                 }
-                break;
+                    break;
             }
 
             //狂戰士對魔法師
@@ -83,8 +92,14 @@ public class game {
                     if(Magician.getHr()==1 && Magician.getHp() > 0) {//法師活著，打中騎兵
                         Berserker.kick(Magician.getAttack(), Magician.getMps());
                     }
+                    Thread.sleep(1000);
+                    System.out.println("==============================");
+                    if (number>=8){
+
+                        break;
+                    }
                 }
-                break;
+                    break;
             }
         }
 
